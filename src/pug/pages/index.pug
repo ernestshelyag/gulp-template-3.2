@@ -1,0 +1,16 @@
+extends ../template
+
+block variables
+    - var title = 'Home page'
+    - var bodyFlex = true
+
+block content
+
+    include ../layout/header
+
+
+    +b.MAIN.main(class=bodyFlex ? 'main-flex' : '')
+        span main
+        a.modal-link(href="#test-popup") modal
+
+    include ../layout/footer

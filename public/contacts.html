@@ -1,0 +1,97 @@
+
+<!-- - - - - ---><!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Contacts</title>
+    <meta content="" name="author">
+    <meta content="" name="description">
+    <!--base(target='_blank')-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="format-detection" content="telephone=no">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <link rel="shortcut icon" href="img/favicon/favicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png"><!--[if lt IE 9]>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
+    <link rel="stylesheet" href="css/vendors.min.css">
+    <link rel="stylesheet" href="css/app.min.css">
+  </head>
+  <body class="body-flex"><!--[if lt IE 8]>
+    <p style="padding: 20px;">
+      Вы используете старую версию браузера.
+      Пожалуйста<a href="http://browsehappy.com/" style="padding: 0 5px; font-weight: bold; text-transform: uppercase; color: blue;" target="_self">обновите ваш браузер</a>перейдя по ссылке.
+    </p><![endif]--><span id="preloader"></span>
+    <header class="header"><span>header</span>
+    </header>
+    <!-- header end-->
+    <main class="contacts main-flex" role="main">
+      <div class="contacts__map" id="map" data-zoom="7" data-lat="59.931632" data-lng="30.336528" data-latmark="59.931551" data-lngmark="33.336528">
+      </div>
+    </main>
+    <footer class="footer"><span>footer</span>
+    </footer>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <script>
+      ymaps.ready(init);
+      var myMap;
+      var el = document.getElementById('map').dataset;
+      
+      function init () {
+        myMap = new ymaps.Map("map", {
+          center: [el.lat, el.lng],
+          zoom: el.zoom
+        });
+      
+        var myPlacemark = new ymaps.Placemark([el.latmark, el.lngmark], {}, {
+          iconLayout: 'default#image',
+          iconImageHref: '/img/map-mark.svg',
+          iconImageSize: [90, 90],
+          iconImageOffset: [-3, -42],
+          hintContent: '',
+          balloonContent: ''
+        });
+      
+        myMap.geoObjects.add(myPlacemark);
+      
+        myMap.controls
+          .remove('Button')
+          .remove('fullscreenControl')
+          .remove('typeSelector')
+          .remove('geolocationControl')
+          .remove('searchControl')
+          .remove('trafficControl')
+          .remove('rulerControl')
+          .remove('zoomControl');
+      
+        myMap.behaviors.disable([
+          'scrollZoom',
+          'multiTouch',
+          'drag'
+        ]);
+      }
+    </script>
+    <!-- enter & reg modals-->
+    <div class="modal mfp-hide" id="test-popup">
+      <form class="modal__form" id="form-test" data-url="test">
+        <h1 class="modal__title">Title
+        </h1>
+        <input type="hidden" name="hidden" value="test-modal">
+        <div class="modal__lev"><input class="modal__input" type="text" name="name" placeholder="name" autocomplete="off"/>
+        </div>
+        <div class="modal__lev"><input class="modal__input" type="email" name="email" placeholder="e-mail" autocomplete="off"/>
+        </div>
+        <button class="modal__button" type="submit">Submit
+        </button>
+      </form>
+    </div>
+    <script src="js/vendors.min.js"></script>
+    <script src="js/main.min.js"></script>
+  </body>
+</html>

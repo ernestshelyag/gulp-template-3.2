@@ -1,0 +1,13 @@
+// enter & reg modals
+
++b.DIV.modal.mfp-hide#test-popup
+    +e.FORM.form#form-test(data-url="test")
+        +e.H1.title Title
+        input(type="hidden" name="hidden" value="test-modal")
+
+        +e.DIV.lev
+            +e.INPUT.input(type="text" name="name" placeholder="name" autocomplete="off")
+        +e.DIV.lev
+            +e.INPUT.input(type="email" name="email" placeholder="e-mail" autocomplete="off")
+
+        +e.BUTTON.button(type="submit") Submit

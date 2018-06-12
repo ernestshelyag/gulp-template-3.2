@@ -1,0 +1,47 @@
+.modal
+  max-width: 300px
+  margin: 0 auto
+  position: relative
+  &__form
+    text-align: center
+    background: #cacaca
+    height: 500px
+  &__input
+    height: 50px
+    +b
+
+.my-mfp-animate .mfp-close
+  color: #fff
+  //top: 10px
+  //right: 10px
+  opacity: 1
+
+.mfp-bg
+  background: $main-col
+
+// popup animation
+
+.my-mfp-animate .modal
+  opacity: 0
+  transform: scale(.8)
+  +tr
+
+.my-mfp-animate.mfp-ready .modal
+  opacity: 1
+  transform: scale(1)
+
+.my-mfp-animate.mfp-removing .modal
+  opacity: 0
+  transform: scale(.8)
+
+// bg animation
+
+.my-mfp-animate.mfp-bg
+  opacity: 0
+  transition: opacity .3s ease-out
+
+.my-mfp-animate.mfp-ready.mfp-bg
+  opacity: .8
+
+.my-mfp-animate.mfp-removing.mfp-bg
+  opacity: 0
