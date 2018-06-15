@@ -7,6 +7,7 @@ global.$ = {
   mqpacker: require('css-mqpacker'),
   autoprefixer: require('autoprefixer'),
   bs: require('browser-sync').create(),
+  uglify: require('gulp-uglify-es').default,
   path: {
     tasks: require('./assets/gulp/paths/tasks.js'),
     jsVendors: require('./assets/gulp/paths/js.vendors.js'),

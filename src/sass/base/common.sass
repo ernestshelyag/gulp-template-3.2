@@ -1,185 +1,55 @@
-*
-  outline: none
-
-// forms
-
-form
-  background: $main-col
-
-.form-btn, .form-inp
-  font-weight: bold
-  font-size: 16px
-  //text-transform: uppercase
-  border-radius: 50px
-  width: 100%
-  letter-spacing: 3px
-  +r(1625)
-    font-size: 14px
-  +r($note)
-    font-size: 12px
-
-.form-inp
-  color: #fff
-  padding: 22px 10px 22px 50px
-  border: solid 2px $form-border
-  &:focus
-    border: solid 2px #fff
-  +r($note)
-    padding: 15px 10px 15px 30px
-
-.form-btn
-  color: $main-col
-  background: #fff
-  text-align: center
-  padding: 22px 0
-  transition: color .3s ease
-  text-transform: uppercase
-  &:hover
-    color: $main-col-dark
-  +r($note)
-    padding: 15px 0
-
 // titles
 
-h1, h2, h3, h4, h5
-  color: #000
-  font-weight: 500
+h1, h2, h3, h4
+  color: $font-blue
+  font-weight: bold
   text-transform: uppercase
-  letter-spacing: .15em
   line-height: 1.1
 h1
   font-size: 40px
-  +r(1520)
+  +rw
     font-size: 30px
-  +r($mobile)
+  +rm
     font-size: 24px
 h2
   font-size: 30px
-  +r($note)
+  +rn
     font-size: 24px
 h3
   font-size: 24px
-  +r($note)
+  +rn
     font-size: 18px
 h4
   font-size: 18px
-  +r($note)
+  +rn
     font-size: 16px
-h5
-  font-size: 16px
-  +r($note)
-    font-size: 14px
 
 // svg-sprite
-
-.arr-next, .arr-prev
-  width: 18px
-  height: 13px
-  fill: $main-col
 
 // breadcrumbs
 
 .breadcrumbs
-  margin-bottom: 30px
-  +r($tablet)
-    margin-bottom: 20px
+  margin-top: 39px
+  +rt
+    margin-top: 20px
   a
-    text-transform: uppercase
-    font-size: 14px
+    font-size: 16px
     text-decoration: none
-    font-weight: 500
-    cursor: pointer
-  span
-    padding: 0 5px
+  i
+    padding-left: 5px
 
 // elements
 
-//main
-//  margin-top: 219px
-//  +r(880)
-//    margin-top: 167px
-
-body
-  letter-spacing: 2px
-
-svg
-  transition: fill .3s ease
-
-p
-  line-height: 1.44
-  +r($tablet)
-    font-size: 16px!important
-  +r($mobile)
-    font-size: 14px!important
-
-.btn
-  width: 338px
-  height: 60px
-  padding: 0 10px
-  display: flex
-  align-items: center
-  justify-content: center
-  text-align: center
-  border: solid 2px $main-col
-  border-radius: 50px
-  font-size: 14px
-  color: #000
-  text-transform: uppercase
-  font-weight: bold
+.main // for IE
+  display: block
   position: relative
-  cursor: pointer
-  text-decoration: none
-  &:hover
-    background: $main-col
-    color: #fff
-    svg
-      fill: #fff
-  svg
-    width: 18px
-    height: 13px
-    position: absolute
-    top: 0
-    bottom: 3px
-    margin: auto
-    right: 34px
-    fill: $main-col
-    +r($note)
-      right: 15px
-  +r($note)
-    height: 45px
-    font-size: 10px
-    width: 250px
+  //margin-top: 219px
+  //+r(880)
+  //  margin-top: 167px
 
-.btn-dark
-  height: 60px
-  padding: 0 10px
-  display: flex
-  align-items: center
-  justify-content: center
-  text-align: center
-  border-radius: 50px
-  font-size: 14px
-  background: $main-col
-  color: #fff
-  text-transform: uppercase
-  font-weight: bold
-  cursor: pointer
-  text-decoration: none
-  &:hover
-    background: $main-col-med
-    color: #fff
 
-.btn-play
-  width: 60px
-  height: 60px
-  border-radius: 50px
-  background: $main-col
-  box-shadow: 0px 15px 18px 0 rgba(47, 204, 198, 0.22)
-  cursor: pointer
-  +psevdo
-  &:before
-    +arr(16, 20, #fff, r)
-    +zero
-    left: 5px
-  &:hover
-    background: $main-col-med
+
+
+
+
+

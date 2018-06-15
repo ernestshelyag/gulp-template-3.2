@@ -12,7 +12,7 @@ module.exports = function () {
         })
       }))
       .pipe($.gp.concat('main.min.js'))
-      .pipe($.gp.uglify())
+      .pipe($.uglify())
       .pipe($.gulp.dest($.config.root + 'js/'));
   });
 };

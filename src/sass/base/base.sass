@@ -7,15 +7,17 @@ $browser-context: 16 // Default
   @return ($size/16)+rem
 
 *, *:before, *:after
-  -moz-box-sizing: border-box
   box-sizing: border-box
+  outline: none
 
 *::selection
-  background: rgba($main-col-med,.93)
+  background: rgba($main-col, .8)
   color: white
 
 html
   text-size-adjust: none
+  font-size: 16px
+
 
 #preloader
   position: fixed
@@ -30,11 +32,9 @@ body
   +main-font
   position: relative
   min-width: 320px
-  font-size: 16px
   color: $font-col
-
-main
-  position: relative
+  overflow-x: hidden
+  //letter-spacing: 2px
 
 a
   +tr
@@ -42,13 +42,21 @@ a
   color: $font-col
   &:hover
     color: $main-col
-    text-decoration: none
+
+p
+  line-height: 1.33
+  +rt
+    font-size: 14px
+  +rm
+    font-size: 12px
+
+svg
+  transition: fill .3s ease
 
 // forms
 
 input, button
   +main-font
-  outline: none
   border: none
   background: transparent
 
@@ -73,7 +81,7 @@ button
       opacity: $opacity
       text-transform: uppercase
 
-+placeholder-color(#fff, 0.8)
++placeholder-color($font-col, 0.8)
 
 // wrapper
 
@@ -81,8 +89,8 @@ button
   max-width: 1340px
   margin: 0 auto
   padding: 0 40px
-  +r($tablet)
-    max-width: 715px // !!!
+  +rt
+    max-width: 715px
     padding: 0 15px
 .wrp
   +wrp

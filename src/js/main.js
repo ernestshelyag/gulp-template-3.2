@@ -4,6 +4,14 @@ $(window).on('load', function () {
 
 $(function () {
 
-  modals();
+  header();
+
+  svg4everybody();
 
 });
+
+let ass = () => {
+  console.log('ass');
+};
+
+ass();
